@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'DM Sans', sans-serif;
+  --font-display: 'Playfair Display', serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    min-width: 320px;
+    background: #fffaf7;
+    color: #4d2d25;
+    font-family: 'DM Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  button,
+  a,
+  input,
+  select,
+  textarea {
+    outline-color: #9d5a42;
+    outline-offset: 3px;
+  }
+
+  button,
+  select {
+    cursor: pointer;
+  }
+}
+
+@layer components {
+  .font-display {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .eyebrow {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #a46a4d;
+  }
+
+  .section-title {
+    margin-top: 0.35rem;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.1rem, 5vw, 3.25rem);
+    font-weight: 600;
+    line-height: 1.12;
+    letter-spacing: -0.025em;
+    color: #633524;
+  }
+
+  .section-copy {
+    margin-top: 0.75rem;
+    max-width: 42rem;
+    color: #816b62;
+    line-height: 1.65;
+  }
+
+  .primary-button {
+    display: inline-flex;
+    min-height: 3rem;
+    align-items: center;
+    justify-content: center;
+    gap: 0.65rem;
+    border-radius: 999px;
+    background: #7e4532;
+    padding: 0.8rem 1.35rem;
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 700;
+    box-shadow: 0 10px 24px rgba(100, 53, 37, 0.16);
+    transition: 180ms ease;
+  }
+
+  .primary-button:hover {
+    transform: translateY(-1px);
+    background: #673522;
+    box-shadow: 0 14px 30px rgba(100, 53, 37, 0.23);
+  }
+
+  .secondary-button {
+    display: inline-flex;
+    min-height: 3rem;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    border: 1px solid #ddc8bd;
+    border-radius: 999px;
+    background: white;
+    padding: 0.75rem 1.15rem;
+    color: #774633;
+    font-size: 0.875rem;
+    font-weight: 700;
+    transition: 180ms ease;
+  }
+
+  .secondary-button:hover {
+    border-color: #a9664b;
+    background: #fff6f2;
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: #674236;
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+
+  .field em {
+    margin-left: 0.25rem;
+    color: #ab8e82;
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  .field input,
+  .field select,
+  .field textarea {
+    width: 100%;
+    border: 1px solid #e2d1c8;
+    border-radius: 0.9rem;
+    background: white;
+    padding: 0.9rem 1rem;
+    color: #4d2d25;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: 160ms ease;
+  }
+
+  .field textarea {
+    resize: vertical;
+  }
+
+  .field input:focus,
+  .field select:focus,
+  .field textarea:focus {
+    border-color: #a9664b;
+    box-shadow: 0 0 0 3px rgba(169, 102, 75, 0.1);
+    outline: none;
+  }
+}
+
+.hero-orb {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(2px);
+  pointer-events: none;
+}
+
+.hero-orb-one {
+  width: 26rem;
+  height: 26rem;
+  top: -15rem;
+  right: 8%;
+  background: radial-gradient(circle, rgba(240, 193, 182, 0.45), rgba(255, 250, 247, 0));
+}
+
+.hero-orb-two {
+  width: 19rem;
+  height: 19rem;
+  bottom: -12rem;
+  left: -5rem;
+  background: radial-gradient(circle, rgba(227, 185, 156, 0.3), rgba(255, 250, 247, 0));
+}
+
+.catalog-scroll {
+  scrollbar-color: #c99c89 #f7ece7;
+  scrollbar-width: thin;
+}
+
+.catalog-scroll::-webkit-scrollbar {
+  width: 7px;
+}
+
+.catalog-scroll::-webkit-scrollbar-track {
+  border-radius: 999px;
+  background: #f7ece7;
+}
+
+.catalog-scroll::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: #c99c89;
+}
+
+.animate-in {
+  animation: reveal 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

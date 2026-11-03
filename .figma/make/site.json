@@ -1,0 +1,11 @@
+{
+  "title": "Book Your Nail Appointment",
+  "description": "Browse Nail Bloom by Sneha Deolay’s nail art catalog and services, compare prices, and follow an interactive workflow to choose the right treatment.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
